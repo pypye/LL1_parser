@@ -12,18 +12,17 @@ def ll1_parser(input, parsing_table, type, init_ptr):
     while len(stack) > 0:
 
         if stack[-1] == input[pointer]["type"]:
-            print(input[pointer]["token"], stack[-1], production)
+            # print(input[pointer]["token"], stack[-1], production)
             stack.pop()
             pointer += 1
             continue
 
-        # production = parsing_table[stack[-1]][input[pointer]["type"]]
         try:
             production = parsing_table[stack[-1]][input[pointer]["type"]]
         except:
             return True, init_ptr
     
-        # print(input[pointer]["token"], stack[-1], production)
+        print(input[pointer]["token"], stack[-1], production)
 
         if production == ['EPSILON']:
             stack.pop()
