@@ -1,0 +1,41 @@
+{
+    "decode": {
+        "LEFT_BRACE": "{",
+        "RIGHT_BRACE": "}",
+        "LEFT_BRACKET": "[",
+        "RIGHT_BRACKET": "]",
+        "LEFT_PAREN": "(",
+        "RIGHT_PAREN": ")",
+        "COMMA": ",",
+        "SEMICOLON": ";",
+        "ASSIGN": "=",
+        "PLUS": "+",
+        "MINUS": "-",
+        "MULTIPLY": "*",
+        "DIVIDE": "/",
+        "AND" : "&&",
+        "OR" : "||",
+        "NOT" : "!",
+        "EQ" : "==",
+        "NEQ" : "!=",
+        "LT" : "<",
+        "GT" : ">",
+        "LEQ" : "<=",
+        "GEQ" : ">=",
+        "IF" : "if",
+        "ELSE" : "else",
+        "FOR": "for",
+        "WHILE" : "while",
+        "BREAK" : "break",
+        "CONTINUE" : "continue",
+        "RETURN" : "return",
+        "VOID" : "void",
+        "BOOLEAN" : "boolean",
+        "INT" : "int",
+        "FLOAT" : "float",
+        "EPSILON": "epsilon"
+    },
+    "token": [
+        "IDENTIFIER", "INTLITERAL", "FLOATLITERAL", "BOOLEANLITERAL", "STRINGLITERAL"
+    ]
+}

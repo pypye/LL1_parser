@@ -1,0 +1,84 @@
+{
+    "func-decl": "type identifier para-list compound-stmt",
+    "var-decl": "type init-declarator-list SEMICOLON",
+    "init-declarator-list": "init-declarator init-declarator-list-t",
+    "init-declarator-list-t": "COMMA init-declarator init-declarator-list-t | EPSILON",
+
+    "init-declarator": "declarator init-declarator-t",
+    "init-declarator-t": "ASSIGN initialiser | EPSILON",
+
+    "declarator": "identifier declarator-t",    
+    "declarator-t": "array-declarator | EPSILON",
+    
+    "array-declarator": "LEFT_BRACKET array-declarator-int RIGHT_BRACKET",
+    "array-declarator-int": "INTLITERAL | EPSILON",
+    
+    "initialiser": "expr | LEFT_BRACE expr initialiser-t RIGHT_BRACE",
+    "initialiser-t": "COMMA expr initialiser-t | EPSILON",
+
+    "type": "VOID | BOOLEAN | INT | FLOAT",
+    "identifier": "IDENTIFIER",
+    
+    "compound-stmt": "LEFT_BRACE var-decl-list stmt-list RIGHT_BRACE",
+    "var-decl-list": "var-decl var-decl-list | EPSILON",
+    "stmt-list": "stmt stmt-list | EPSILON",
+
+    "stmt": "compound-stmt | if-stmt | for-stmt | while-stmt | break-stmt | continue-stmt | return-stmt | expr-stmt",
+
+    "if-stmt": "IF LEFT_PAREN expr RIGHT_PAREN stmt else-stmt",
+    "else-stmt": "EPSILON | ELSE stmt",
+
+    "for-stmt": "FOR LEFT_PAREN expr-t SEMICOLON expr-t SEMICOLON expr-t RIGHT_PAREN stmt",
+
+    "while-stmt": "WHILE LEFT_PAREN expr RIGHT_PAREN stmt",
+    "break-stmt": "BREAK SEMICOLON",
+    "continue-stmt": "CONTINUE SEMICOLON",
+    "return-stmt": "RETURN expr-t SEMICOLON",
+    "expr-stmt": "expr SEMICOLON | SEMICOLON",
+
+    "expr-t": "expr | EPSILON",
+    
+    "expr": "assign-expr",
+    "assign-expr": "cond-or-expr assign-expr-t",
+    "assign-expr-t": "ASSIGN cond-or-expr assign-expr-t | EPSILON",
+
+    "cond-or-expr": "cond-and-expr cond-or-expr-t",
+    "cond-or-expr-t": "OR cond-and-expr cond-or-expr-t | EPSILON",
+
+    "cond-and-expr": "equality-expr cond-and-expr-t",
+    "cond-and-expr-t": "AND equality-expr cond-and-expr-t | EPSILON",
+
+    "equality-expr": "relational-expr equality-expr-t",
+    "equality-expr-t": "EQ relational-expr equality-expr-t | NEQ relational-expr equality-expr-t | EPSILON",
+
+    "relational-expr": "additive-expr relational-expr-t",
+    "relational-expr-t": "LT additive-expr relational-expr-t | GT additive-expr relational-expr-t | LEQ additive-expr relational-expr-t | GEQ additive-expr relational-expr-t | EPSILON",
+
+    "additive-expr": "multiplicative-expr additive-expr-t",
+    "additive-expr-t": "PLUS multiplicative-expr additive-expr-t | MINUS multiplicative-expr additive-expr-t | EPSILON",
+
+    "multiplicative-expr": "unary-expr multiplicative-expr-t",
+    "multiplicative-expr-t": "TIMES unary-expr multiplicative-expr-t | DIVIDE unary-expr multiplicative-expr-t | EPSILON",
+
+    "unary-expr": "unary-op primary-expr | primary-expr",
+    "unary-op": "PLUS | MINUS | NOT",
+    
+    
+    "primary-expr": "identifier primary-expr-t | LEFT_PAREN expr RIGHT_PAREN | INTLITERAL | FLOATLITERAL | BOOLEANLITERAL | STRINGLITERAL",
+    "primary-expr-t": "LEFT_BRACKET expr RIGHT_BRACKET | arg-list | EPSILON",
+    
+
+    "para-list": "LEFT_PAREN para-list-t RIGHT_PAREN",
+    "para-list-t": "proper-para-list | EPSILON",
+
+    "proper-para-list": "para-decl proper-para-list-t",
+    "proper-para-list-t": "COMMA para-decl proper-para-list-t | EPSILON",
+
+    "para-decl": "type declarator",
+    "arg-list": "LEFT_PAREN arg-list-t RIGHT_PAREN",
+    "arg-list-t": "proper-arg-list | EPSILON",
+    
+    "proper-arg-list": "arg proper-arg-list-t",
+    "proper-arg-list-t": "COMMA arg proper-arg-list-t | EPSILON",
+    "arg": "expr"
+}

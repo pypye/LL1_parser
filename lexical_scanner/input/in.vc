@@ -1,0 +1,34 @@
+void    function      (
+boolean abc, 
+      float b = 12.3e4){
+   
+   // day la mot chu thich dong
+
+   b = .2;
+
+   for{int i   =0; i<
+   12345; i = i+10}
+   {
+      a = "chang hieu sao lai co string 
+      literal khi vc k co kieu string";
+      if (a < 3.2) {
+         return a+ b;
+         /* day la
+         mot chu thich doan */
+
+      }
+      while (true) {
+         return false;
+         /* ra sao neu // la mot chu thich doan */
+
+         // /* va nguoc lai */
+      }
+
+      a;
+      !>
+      3e54;
+      ashdbas912983
+      b=1.2e222.2e13 ff;
+   }
+   
+}//abcd
