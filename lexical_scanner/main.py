@@ -18,4 +18,4 @@ def generate_token(file):
     scan(traveller, scanner, token, vctok_path=f"output/{file}/{file}.vctok", vctok_verbose_path=f"output/{file}/{file}.verbose.vctok")
     print("[+] Generate token done")
 
-generate_token("in")
+generate_token("test")

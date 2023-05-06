@@ -12,6 +12,7 @@ def ll1_parser(input, parsing_table, type, init_ptr):
     while len(stack) > 0:
 
         if stack[-1] == input[pointer]["type"]:
+            print(input[pointer]["token"], stack[-1], production)
             stack.pop()
             pointer += 1
             continue
@@ -22,7 +23,7 @@ def ll1_parser(input, parsing_table, type, init_ptr):
         except:
             return True, init_ptr
     
-        print(input[pointer]["token"], stack[-1], production)
+        # print(input[pointer]["token"], stack[-1], production)
 
         if production == ['EPSILON']:
             stack.pop()
@@ -50,7 +51,7 @@ def parse(vc_token, parsing_table):
     print("Syntax is correct")
 
 
-vc_token = read('./lexical_scanner/output/example_gcd/example_gcd.verbose.vctok')
+vc_token = read('./lexical_scanner/output/test/test.verbose.vctok')
 # for x in vc_token:
 #     print(x)
 parse(vc_token, parsing_table)

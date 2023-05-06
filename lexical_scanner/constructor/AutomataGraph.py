@@ -1,5 +1,5 @@
 # from graphviz import Digraph
-from markdownTable import markdownTable
+# from markdownTable import markdownTable
 
 class AutomataGraph():
     def __init__(self, data, normalize=True):
@@ -83,4 +83,4 @@ class AutomataGraph():
                     else:
                         row[y] = ''
                 data.append(row)
-        print(markdownTable(data).getMarkdown(), file=f)
+        # print(markdownTable(data).getMarkdown(), file=f)
