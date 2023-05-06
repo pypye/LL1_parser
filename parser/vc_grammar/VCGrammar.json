@@ -58,7 +58,7 @@
     "additive-expr-t": "PLUS multiplicative-expr additive-expr-t | MINUS multiplicative-expr additive-expr-t | EPSILON",
 
     "multiplicative-expr": "unary-expr multiplicative-expr-t",
-    "multiplicative-expr-t": "TIMES unary-expr multiplicative-expr-t | DIVIDE unary-expr multiplicative-expr-t | EPSILON",
+    "multiplicative-expr-t": "MULTIPLY unary-expr multiplicative-expr-t | DIVIDE unary-expr multiplicative-expr-t | EPSILON",
 
     "unary-expr": "unary-op primary-expr | primary-expr",
     "unary-op": "PLUS | MINUS | NOT",

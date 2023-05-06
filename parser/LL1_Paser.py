@@ -50,7 +50,7 @@ def parse(vc_token, parsing_table):
     print("Syntax is correct")
 
 
-vc_token = read('./lexical_scanner/output/example_fib/example_fib.verbose.vctok')
+vc_token = read('./lexical_scanner/output/example_gcd/example_gcd.verbose.vctok')
 # for x in vc_token:
 #     print(x)
 parse(vc_token, parsing_table)
