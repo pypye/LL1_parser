@@ -32,5 +32,5 @@ def get_follow(object_name, grammar):
     object_set = set()
     return __get_follow__(object_name, grammar)
 
-grammar = parserReader('./parser/vc_grammar/VCGrammar.json')
-print(get_follow("declarator-tail", grammar))
+# grammar = parserReader('./parser/vc_grammar/VCGrammar.json')
+# print(get_follow("declarator-tail", grammar))
