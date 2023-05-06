@@ -1,4 +1,4 @@
-from PaserReader import parserReader
+from parser.PaserReader import parserReader
 
 def is_terminal_symbol(string):
     return isinstance(string, str) and string == string.upper()

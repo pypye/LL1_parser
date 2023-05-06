@@ -1,6 +1,6 @@
-from PaserReader import parserReader
-from Select import build_parsing_table
-from ScannerReader import read
+from parser.PaserReader import parserReader
+from parser.Select import build_parsing_table
+from parser.ScannerReader import read
 
 grammar = parserReader('./parser/vc_grammar/VCGrammar.json')
 parsing_table = build_parsing_table(grammar)

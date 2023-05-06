@@ -1,7 +1,7 @@
 import json
 from collections import defaultdict
-from First import get_first_from_production
-from Follow import get_follow
+from parser.First import get_first_from_production
+from parser.Follow import get_follow
 
 with open("./parser/vc_grammar/VCGrammar.json", 'r') as f:
     data = f.read()

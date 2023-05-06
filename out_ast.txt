@@ -20,7 +20,7 @@
         <multiplicative-expr>
          <unary-expr>
           <primary-expr>
-          10
+          5
          <multiplicative-expr-t>
         <additive-expr-t>
        <relational-expr-t>
