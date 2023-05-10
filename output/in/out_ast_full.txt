@@ -353,27 +353,62 @@
         │       │                   │   │   │       │       │   │   │   │   └── <relational-expr-t>
         │       │                   │   │   │       │       │   │   │   │       └── EPSILON
         │       │                   │   │   │       │       │   │   │   └── <equality-expr-t>
-        │       │                   │   │   │       │       │   │   │       ├── ==
-        │       │                   │   │   │       │       │   │   │       ├── <relational-expr>
-        │       │                   │   │   │       │       │   │   │       │   ├── <additive-expr>
-        │       │                   │   │   │       │       │   │   │       │   │   ├── <multiplicative-expr>
-        │       │                   │   │   │       │       │   │   │       │   │   │   ├── <unary-expr>
-        │       │                   │   │   │       │       │   │   │       │   │   │   │   └── <primary-expr>
-        │       │                   │   │   │       │       │   │   │       │   │   │   │       └── 3
-        │       │                   │   │   │       │       │   │   │       │   │   │   └── <multiplicative-expr-t>
-        │       │                   │   │   │       │       │   │   │       │   │   │       └── EPSILON
-        │       │                   │   │   │       │       │   │   │       │   │   └── <additive-expr-t>
-        │       │                   │   │   │       │       │   │   │       │   │       └── EPSILON
-        │       │                   │   │   │       │       │   │   │       │   └── <relational-expr-t>
-        │       │                   │   │   │       │       │   │   │       │       └── EPSILON
-        │       │                   │   │   │       │       │   │   │       └── <equality-expr-t>
-        │       │                   │   │   │       │       │   │   │           └── EPSILON
+        │       │                   │   │   │       │       │   │   │       └── EPSILON
         │       │                   │   │   │       │       │   │   └── <cond-and-expr-t>
         │       │                   │   │   │       │       │   │       └── EPSILON
         │       │                   │   │   │       │       │   └── <cond-or-expr-t>
         │       │                   │   │   │       │       │       └── EPSILON
         │       │                   │   │   │       │       └── <assign-expr-t>
-        │       │                   │   │   │       │           └── EPSILON
+        │       │                   │   │   │       │           ├── =
+        │       │                   │   │   │       │           ├── <cond-or-expr>
+        │       │                   │   │   │       │           │   ├── <cond-and-expr>
+        │       │                   │   │   │       │           │   │   ├── <equality-expr>
+        │       │                   │   │   │       │           │   │   │   ├── <relational-expr>
+        │       │                   │   │   │       │           │   │   │   │   ├── <additive-expr>
+        │       │                   │   │   │       │           │   │   │   │   │   ├── <multiplicative-expr>
+        │       │                   │   │   │       │           │   │   │   │   │   │   ├── <unary-expr>
+        │       │                   │   │   │       │           │   │   │   │   │   │   │   └── <primary-expr>
+        │       │                   │   │   │       │           │   │   │   │   │   │   │       └── 1
+        │       │                   │   │   │       │           │   │   │   │   │   │   └── <multiplicative-expr-t>
+        │       │                   │   │   │       │           │   │   │   │   │   │       └── EPSILON
+        │       │                   │   │   │       │           │   │   │   │   │   └── <additive-expr-t>
+        │       │                   │   │   │       │           │   │   │   │   │       ├── +
+        │       │                   │   │   │       │           │   │   │   │   │       ├── <multiplicative-expr>
+        │       │                   │   │   │       │           │   │   │   │   │       │   ├── <unary-expr>
+        │       │                   │   │   │       │           │   │   │   │   │       │   │   └── <primary-expr>
+        │       │                   │   │   │       │           │   │   │   │   │       │   │       └── 2
+        │       │                   │   │   │       │           │   │   │   │   │       │   └── <multiplicative-expr-t>
+        │       │                   │   │   │       │           │   │   │   │   │       │       ├── *
+        │       │                   │   │   │       │           │   │   │   │   │       │       ├── <unary-expr>
+        │       │                   │   │   │       │           │   │   │   │   │       │       │   └── <primary-expr>
+        │       │                   │   │   │       │           │   │   │   │   │       │       │       └── 3
+        │       │                   │   │   │       │           │   │   │   │   │       │       └── <multiplicative-expr-t>
+        │       │                   │   │   │       │           │   │   │   │   │       │           ├── /
+        │       │                   │   │   │       │           │   │   │   │   │       │           ├── <unary-expr>
+        │       │                   │   │   │       │           │   │   │   │   │       │           │   └── <primary-expr>
+        │       │                   │   │   │       │           │   │   │   │   │       │           │       └── 4
+        │       │                   │   │   │       │           │   │   │   │   │       │           └── <multiplicative-expr-t>
+        │       │                   │   │   │       │           │   │   │   │   │       │               └── EPSILON
+        │       │                   │   │   │       │           │   │   │   │   │       └── <additive-expr-t>
+        │       │                   │   │   │       │           │   │   │   │   │           ├── -
+        │       │                   │   │   │       │           │   │   │   │   │           ├── <multiplicative-expr>
+        │       │                   │   │   │       │           │   │   │   │   │           │   ├── <unary-expr>
+        │       │                   │   │   │       │           │   │   │   │   │           │   │   └── <primary-expr>
+        │       │                   │   │   │       │           │   │   │   │   │           │   │       └── 5
+        │       │                   │   │   │       │           │   │   │   │   │           │   └── <multiplicative-expr-t>
+        │       │                   │   │   │       │           │   │   │   │   │           │       └── EPSILON
+        │       │                   │   │   │       │           │   │   │   │   │           └── <additive-expr-t>
+        │       │                   │   │   │       │           │   │   │   │   │               └── EPSILON
+        │       │                   │   │   │       │           │   │   │   │   └── <relational-expr-t>
+        │       │                   │   │   │       │           │   │   │   │       └── EPSILON
+        │       │                   │   │   │       │           │   │   │   └── <equality-expr-t>
+        │       │                   │   │   │       │           │   │   │       └── EPSILON
+        │       │                   │   │   │       │           │   │   └── <cond-and-expr-t>
+        │       │                   │   │   │       │           │   │       └── EPSILON
+        │       │                   │   │   │       │           │   └── <cond-or-expr-t>
+        │       │                   │   │   │       │           │       └── EPSILON
+        │       │                   │   │   │       │           └── <assign-expr-t>
+        │       │                   │   │   │       │               └── EPSILON
         │       │                   │   │   │       └── ;
         │       │                   │   │   └── <stmt-list>
         │       │                   │   │       └── EPSILON
@@ -381,5 +416,62 @@
         │       │                   └── <else-stmt>
         │       │                       └── EPSILON
         │       └── <stmt-list>
-        │           └── EPSILON
+        │           ├── <stmt>
+        │           │   └── <if-stmt>
+        │           │       ├── if
+        │           │       ├── (
+        │           │       ├── <expr>
+        │           │       │   └── <assign-expr>
+        │           │       │       ├── <cond-or-expr>
+        │           │       │       │   ├── <cond-and-expr>
+        │           │       │       │   │   ├── <equality-expr>
+        │           │       │       │   │   │   ├── <relational-expr>
+        │           │       │       │   │   │   │   ├── <additive-expr>
+        │           │       │       │   │   │   │   │   ├── <multiplicative-expr>
+        │           │       │       │   │   │   │   │   │   ├── <unary-expr>
+        │           │       │       │   │   │   │   │   │   │   └── <primary-expr>
+        │           │       │       │   │   │   │   │   │   │       ├── <identifier>
+        │           │       │       │   │   │   │   │   │   │       │   └── i
+        │           │       │       │   │   │   │   │   │   │       └── <primary-expr-t>
+        │           │       │       │   │   │   │   │   │   │           └── EPSILON
+        │           │       │       │   │   │   │   │   │   └── <multiplicative-expr-t>
+        │           │       │       │   │   │   │   │   │       └── EPSILON
+        │           │       │       │   │   │   │   │   └── <additive-expr-t>
+        │           │       │       │   │   │   │   │       └── EPSILON
+        │           │       │       │   │   │   │   └── <relational-expr-t>
+        │           │       │       │   │   │   │       └── EPSILON
+        │           │       │       │   │   │   └── <equality-expr-t>
+        │           │       │       │   │   │       ├── ==
+        │           │       │       │   │   │       ├── <relational-expr>
+        │           │       │       │   │   │       │   ├── <additive-expr>
+        │           │       │       │   │   │       │   │   ├── <multiplicative-expr>
+        │           │       │       │   │   │       │   │   │   ├── <unary-expr>
+        │           │       │       │   │   │       │   │   │   │   └── <primary-expr>
+        │           │       │       │   │   │       │   │   │   │       └── 2
+        │           │       │       │   │   │       │   │   │   └── <multiplicative-expr-t>
+        │           │       │       │   │   │       │   │   │       └── EPSILON
+        │           │       │       │   │   │       │   │   └── <additive-expr-t>
+        │           │       │       │   │   │       │   │       └── EPSILON
+        │           │       │       │   │   │       │   └── <relational-expr-t>
+        │           │       │       │   │   │       │       └── EPSILON
+        │           │       │       │   │   │       └── <equality-expr-t>
+        │           │       │       │   │   │           └── EPSILON
+        │           │       │       │   │   └── <cond-and-expr-t>
+        │           │       │       │   │       └── EPSILON
+        │           │       │       │   └── <cond-or-expr-t>
+        │           │       │       │       └── EPSILON
+        │           │       │       └── <assign-expr-t>
+        │           │       │           └── EPSILON
+        │           │       ├── )
+        │           │       ├── <compound-stmt>
+        │           │       │   ├── {
+        │           │       │   ├── <var-decl-list>
+        │           │       │   │   └── EPSILON
+        │           │       │   ├── <stmt-list>
+        │           │       │   │   └── EPSILON
+        │           │       │   └── }
+        │           │       └── <else-stmt>
+        │           │           └── EPSILON
+        │           └── <stmt-list>
+        │               └── EPSILON
         └── }
