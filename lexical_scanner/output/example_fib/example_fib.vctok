@@ -35,11 +35,13 @@ n
 <=
 0
 )
+{
 putString
 (
 "The number should be positive.\n"
 )
 ;
+}
 else
 {
 putString

@@ -1,0 +1,123 @@
+<program>
+├── <var-decl>
+│   ├── int
+│   ├── i
+│   └── ;
+├── <var-decl>
+│   ├── int
+│   ├── j
+│   └── ;
+├── <func-decl>
+│   ├── int
+│   ├── gcd
+│   ├── <para-list>
+│   │   ├── (
+│   │   ├── <proper-para-list>
+│   │   │   ├── <para-decl>
+│   │   │   │   ├── int
+│   │   │   │   └── a
+│   │   │   └── <proper-para-list-t>
+│   │   │       ├── ,
+│   │   │       └── <para-decl>
+│   │   │           ├── int
+│   │   │           └── b
+│   │   └── )
+│   └── <compound-stmt>
+│       ├── {
+│       ├── <if-stmt>
+│       │   ├── if
+│       │   ├── (
+│       │   ├── <equality-expr>
+│       │   │   ├── b
+│       │   │   └── <equality-expr-t>
+│       │   │       ├── ==
+│       │   │       └── 0
+│       │   ├── )
+│       │   ├── <compound-stmt>
+│       │   │   ├── {
+│       │   │   ├── <return-stmt>
+│       │   │   │   ├── return
+│       │   │   │   ├── a
+│       │   │   │   └── ;
+│       │   │   └── }
+│       │   └── <else-stmt>
+│       │       ├── else
+│       │       └── <return-stmt>
+│       │           ├── return
+│       │           ├── <primary-expr>
+│       │           │   ├── gcd
+│       │           │   └── <arg-list>
+│       │           │       ├── (
+│       │           │       ├── <proper-arg-list>
+│       │           │       │   ├── b
+│       │           │       │   └── <proper-arg-list-t>
+│       │           │       │       ├── ,
+│       │           │       │       └── <additive-expr>
+│       │           │       │           ├── a
+│       │           │       │           └── <additive-expr-t>
+│       │           │       │               ├── -
+│       │           │       │               └── <multiplicative-expr>
+│       │           │       │                   ├── <primary-expr>
+│       │           │       │                   │   ├── (
+│       │           │       │                   │   ├── <multiplicative-expr>
+│       │           │       │                   │   │   ├── a
+│       │           │       │                   │   │   └── <multiplicative-expr-t>
+│       │           │       │                   │   │       ├── /
+│       │           │       │                   │   │       └── b
+│       │           │       │                   │   └── )
+│       │           │       │                   └── <multiplicative-expr-t>
+│       │           │       │                       ├── *
+│       │           │       │                       └── b
+│       │           │       └── )
+│       │           └── ;
+│       └── }
+└── <func-decl>
+    ├── void
+    ├── main
+    ├── <para-list>
+    │   ├── (
+    │   └── )
+    └── <compound-stmt>
+        ├── {
+        ├── <stmt-list>
+        │   ├── <expr-stmt>
+        │   │   ├── <assign-expr>
+        │   │   │   ├── i
+        │   │   │   └── <assign-expr-t>
+        │   │   │       ├── =
+        │   │   │       └── <primary-expr>
+        │   │   │           ├── getInt
+        │   │   │           └── <arg-list>
+        │   │   │               ├── (
+        │   │   │               └── )
+        │   │   └── ;
+        │   └── <stmt-list>
+        │       ├── <expr-stmt>
+        │       │   ├── <assign-expr>
+        │       │   │   ├── j
+        │       │   │   └── <assign-expr-t>
+        │       │   │       ├── =
+        │       │   │       └── <primary-expr>
+        │       │   │           ├── getInt
+        │       │   │           └── <arg-list>
+        │       │   │               ├── (
+        │       │   │               └── )
+        │       │   └── ;
+        │       └── <expr-stmt>
+        │           ├── <primary-expr>
+        │           │   ├── putIntLn
+        │           │   └── <arg-list>
+        │           │       ├── (
+        │           │       ├── <primary-expr>
+        │           │       │   ├── gcd
+        │           │       │   └── <arg-list>
+        │           │       │       ├── (
+        │           │       │       ├── <proper-arg-list>
+        │           │       │       │   ├── i
+        │           │       │       │   └── <proper-arg-list-t>
+        │           │       │       │       ├── ,
+        │           │       │       │       └── j
+        │           │       │       └── )
+        │           │       └── )
+        │           └── ;
+        └── }

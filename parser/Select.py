@@ -1,7 +1,7 @@
 import json
 from collections import defaultdict
-from First import get_first_from_production
-from Follow import get_follow
+from .First import get_first_from_production
+from .Follow import get_follow
 
 with open("./parser/vc_grammar/VCGrammar.json", 'r') as f:
     data = f.read()
@@ -25,8 +25,17 @@ def build_parsing_table(grammar):
                 first_set.remove("EPSILON")
                 follow_set = get_follow(non_terminal_symbol, grammar)
                 for terminal_symbol in follow_set:
-                    parsing_table[non_terminal_symbol][terminal_symbol] = production
+                    if terminal_symbol in parsing_table[non_terminal_symbol]:
+                        raise Exception(f"Grammar is not LL(1). Found duplicate syntax in {non_terminal_symbol} {terminal_symbol}\n"
+                                        f"Previous production: {parsing_table[non_terminal_symbol][terminal_symbol]}\n"
+                                        f"Current production: {production}")
+                    else:
+                        parsing_table[non_terminal_symbol][terminal_symbol] = production
                 
             for terminal_symbol in first_set:
+                if terminal_symbol in parsing_table[non_terminal_symbol]:
+                    raise Exception(f"Grammar is not LL(1). Found duplicate syntax in {non_terminal_symbol} {terminal_symbol}\n"
+                                    f"Previous production: {parsing_table[non_terminal_symbol][terminal_symbol]}\n"
+                                    f"Current production: {production}")
                 parsing_table[non_terminal_symbol][terminal_symbol] = production
     return parsing_table

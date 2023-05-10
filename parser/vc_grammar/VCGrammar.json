@@ -25,8 +25,8 @@
 
     "stmt": "compound-stmt | if-stmt | for-stmt | while-stmt | break-stmt | continue-stmt | return-stmt | expr-stmt",
 
-    "if-stmt": "IF LEFT_PAREN expr RIGHT_PAREN stmt else-stmt",
-    "else-stmt": "EPSILON | ELSE stmt",
+    "if-stmt": "IF LEFT_PAREN expr RIGHT_PAREN compound-stmt else-stmt",
+    "else-stmt": "ELSE stmt | EPSILON",
 
     "for-stmt": "FOR LEFT_PAREN expr-t SEMICOLON expr-t SEMICOLON expr-t RIGHT_PAREN stmt",
 

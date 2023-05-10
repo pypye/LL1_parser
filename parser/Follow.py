@@ -1,5 +1,5 @@
-from PaserReader import parserReader
-from First import get_first
+from .PaserReader import parserReader
+from .First import get_first
 
 object_set = set()
 def __get_follow__(object_name, grammar):

@@ -1,102 +1,79 @@
-from PaserReader import parserReader
-from Select import build_parsing_table
-from ScannerReader import read
-
-grammar = parserReader('./parser/vc_grammar/VCGrammar.json')
-parsing_table = build_parsing_table(grammar)
+from .PaserReader import parserReader
+from .Select import build_parsing_table
+from .ScannerReader import read
+import treelib
+import os
+import copy
 
 class AST:
     def __init__(self):
-        self.tab = 0
-        self.count_tab = {0: 2}
-        self.ast = []
+        self.tree = treelib.Tree(deep=True)
+        self.tree.create_node("<program>", 0)
 
-    def add_node(self, token):
-        self.ast.append((self.tab, token))
-        
-    def remove_tab(self):
-        self.count_tab[self.tab] -= 1
-        if self.count_tab[self.tab] == 0:
-            self.tab -= 1
-        
-    def add_tab(self):
-        self.tab += 1
-        self.count_tab[self.tab] = 0
-    
-    def increase_count(self):
-        self.count_tab[self.tab] += 1
+    def add_node(self, token, id, parent_id):
+        self.tree.create_node(token, id+1, parent=parent_id)
+        return id+1
 
-    def decrease_count(self):
-        self.count_tab[self.tab] -= 1
-
-    def print(self, mode="w"):
-        out = open("out_ast.txt", mode)
-        for tab, token in self.ast:
-            # if token[0] == "<":
-            #     out.write(" "*tab + "(" + "\n")
-            # else:
-            out.write(" "*tab + token + "\n")
-
-def ll1_parser(input, parsing_table, type, init_ptr):
-    ast = AST()
-    stack = [type]
+def ll1_parser(input, parsing_table, type, init_ptr, ast, id):
+    ast = copy.deepcopy(ast)
+    stack = [{"production": type, "parent": 0}]
     pointer = init_ptr
     while len(stack) > 0:
-
-        if stack[-1] == input[pointer]["type"]:
-            stack.pop()
-            # print(" "*ast.tab + input[pointer]["token"])
-            ast.add_node(input[pointer]["token"])
-            ast.remove_tab()
+        u = stack[-1]
+        stack.pop()
+        if u["production"] == input[pointer]["type"]:
+            id = ast.add_node(input[pointer]["token"], id, u["parent"])
             pointer += 1
             continue
 
-        ast.add_node("<" + stack[-1] + ">")
-        # print(" "*ast.tab + "<" + stack[-1] + ">")
+        if u["production"] == "EPSILON":
+            id = ast.add_node("EPSILON", id, u["parent"])
+            continue
 
         try:
-            production = parsing_table[stack[-1]][input[pointer]["type"]]
+            production = parsing_table[u["production"]][input[pointer]["type"]]
         except:
-            return True, init_ptr, ast
-
-        # print(input[pointer]["token"], stack[-1], production)
-
-        if production == ['EPSILON']:
-            stack.pop()
-            ast.remove_tab()
-            continue
+            return True, pointer, ast, id
         
-        stack.pop()
-        ast.remove_tab()
-        ast.add_tab()
+        id = ast.add_node("<" + u["production"] + ">", id, u["parent"])
         for x in production[::-1]:
-            ast.increase_count()
-            stack.append(x)
+            stack.append({ "production": x, "parent": id})
 
-    return False, pointer, ast
+    return False, pointer, ast, id
 
-def parse(vc_token, parsing_table):
-    ast_list = []
+def parse(file, vc_token, parsing_table):
+    ast = AST()
     pointer = 0
+    id = 1
     while pointer < len(vc_token)-1:
-        err1, pt1, ast1 = ll1_parser(vc_token, parsing_table, "var-decl", pointer)
-        err2, pt2, ast2 = ll1_parser(vc_token, parsing_table, "func-decl", pointer)
+        err1, pt1, ast1, id1 = ll1_parser(vc_token, parsing_table, "var-decl", pointer, ast, id)
+        err2, pt2, ast2, id2 = ll1_parser(vc_token, parsing_table, "func-decl", pointer, ast, id)
         if err1 and err2:
-            print("Syntax error at line", vc_token[pointer]["position"])
-            return
+            raise Exception(f'[var-decl] Syntax error at line {vc_token[pt1]["position"]}\n'
+                            f'[func-decl] Syntax error at line", {vc_token[pt2]["position"]}')
         elif err1 == False:
             pointer = pt1
-            ast_list.append(ast1)
+            id = id1
+            ast = ast1
         elif err2 == False:
             pointer = pt2
-            ast_list.append(ast2)
-    
+            id = id2
+            ast = ast2
 
-    ast_list[0].print("w")
-    for ast in ast_list[1:]:
-        ast.print("a")
-    print("Syntax is correct")
+    os.makedirs(f"./output/{file}", exist_ok=True)
+    if os.path.exists(f"./output/{file}/out_ast_full.txt"):
+        os.remove(f"./output/{file}/out_ast_full.txt")
+    ast.tree.save2file(f"./output/{file}/out_ast_full.txt", key=lambda x: x.identifier)
+
+    print("[+] Syntax is correct")
+    return ast.tree
 
 
-vc_token = read('./lexical_scanner/output/example_gcd/example_gcd.verbose.vctok')
-parse(vc_token, parsing_table)
+def LL1_parser(file):
+    grammar = parserReader('./parser/vc_grammar/VCGrammar.json')
+    parsing_table = build_parsing_table(grammar)
+    vc_token = read(f'./lexical_scanner/output/{file}/{file}.verbose.vctok')
+    ast = parse(file, vc_token, parsing_table)
+
+    print("[+] LL1 Parse done")
+    return ast

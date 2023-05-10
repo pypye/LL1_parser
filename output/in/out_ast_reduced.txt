@@ -1,0 +1,79 @@
+<program>
+└── <func-decl>
+    ├── void
+    ├── main
+    ├── <para-list>
+    │   ├── (
+    │   └── )
+    └── <compound-stmt>
+        ├── {
+        ├── <var-decl-list>
+        │   ├── <var-decl>
+        │   │   ├── int
+        │   │   ├── i
+        │   │   └── ;
+        │   └── <var-decl>
+        │       ├── int
+        │       ├── j
+        │       └── ;
+        ├── <stmt-list>
+        │   ├── <if-stmt>
+        │   │   ├── if
+        │   │   ├── (
+        │   │   ├── <assign-expr>
+        │   │   │   ├── i
+        │   │   │   └── <assign-expr-t>
+        │   │   │       ├── =
+        │   │   │       └── 2
+        │   │   ├── )
+        │   │   └── <compound-stmt>
+        │   │       ├── {
+        │   │       ├── <expr-stmt>
+        │   │       │   ├── <assign-expr>
+        │   │       │   │   ├── i
+        │   │       │   │   └── <assign-expr-t>
+        │   │       │   │       ├── =
+        │   │       │   │       └── 2
+        │   │       │   └── ;
+        │   │       └── }
+        │   └── <if-stmt>
+        │       ├── if
+        │       ├── (
+        │       ├── <equality-expr>
+        │       │   ├── i
+        │       │   └── <equality-expr-t>
+        │       │       ├── ==
+        │       │       └── 3
+        │       ├── )
+        │       ├── <compound-stmt>
+        │       │   ├── {
+        │       │   ├── <expr-stmt>
+        │       │   │   ├── <assign-expr>
+        │       │   │   │   ├── i
+        │       │   │   │   └── <assign-expr-t>
+        │       │   │   │       ├── =
+        │       │   │   │       └── 3
+        │       │   │   └── ;
+        │       │   └── }
+        │       └── <else-stmt>
+        │           ├── else
+        │           └── <if-stmt>
+        │               ├── if
+        │               ├── (
+        │               ├── <equality-expr>
+        │               │   ├── i
+        │               │   └── <equality-expr-t>
+        │               │       ├── ==
+        │               │       └── 2
+        │               ├── )
+        │               └── <compound-stmt>
+        │                   ├── {
+        │                   ├── <expr-stmt>
+        │                   │   ├── <equality-expr>
+        │                   │   │   ├── i
+        │                   │   │   └── <equality-expr-t>
+        │                   │   │       ├── ==
+        │                   │   │       └── 3
+        │                   │   └── ;
+        │                   └── }
+        └── }

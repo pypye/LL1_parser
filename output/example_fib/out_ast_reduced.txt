@@ -1,0 +1,191 @@
+<program>
+└── <func-decl>
+    ├── void
+    ├── main
+    ├── <para-list>
+    │   ├── (
+    │   └── )
+    └── <compound-stmt>
+        ├── {
+        ├── <var-decl-list>
+        │   ├── <var-decl>
+        │   │   ├── int
+        │   │   ├── n
+        │   │   └── ;
+        │   └── <var-decl-list>
+        │       ├── <var-decl>
+        │       │   ├── int
+        │       │   ├── i
+        │       │   └── ;
+        │       └── <var-decl-list>
+        │           ├── <var-decl>
+        │           │   ├── int
+        │           │   ├── current
+        │           │   └── ;
+        │           └── <var-decl-list>
+        │               ├── <var-decl>
+        │               │   ├── int
+        │               │   ├── next
+        │               │   └── ;
+        │               └── <var-decl>
+        │                   ├── int
+        │                   ├── twoaway
+        │                   └── ;
+        ├── <stmt-list>
+        │   ├── <expr-stmt>
+        │   │   ├── <primary-expr>
+        │   │   │   ├── putString
+        │   │   │   └── <arg-list>
+        │   │   │       ├── (
+        │   │   │       ├── How many Fibonacci numbers do you want to compute? 
+        │   │   │       └── )
+        │   │   └── ;
+        │   └── <stmt-list>
+        │       ├── <expr-stmt>
+        │       │   ├── <assign-expr>
+        │       │   │   ├── n
+        │       │   │   └── <assign-expr-t>
+        │       │   │       ├── =
+        │       │   │       └── <primary-expr>
+        │       │   │           ├── getInt
+        │       │   │           └── <arg-list>
+        │       │   │               ├── (
+        │       │   │               └── )
+        │       │   └── ;
+        │       └── <if-stmt>
+        │           ├── if
+        │           ├── (
+        │           ├── <relational-expr>
+        │           │   ├── n
+        │           │   └── <relational-expr-t>
+        │           │       ├── <=
+        │           │       └── 0
+        │           ├── )
+        │           ├── <compound-stmt>
+        │           │   ├── {
+        │           │   ├── <expr-stmt>
+        │           │   │   ├── <primary-expr>
+        │           │   │   │   ├── putString
+        │           │   │   │   └── <arg-list>
+        │           │   │   │       ├── (
+        │           │   │   │       ├── The number should be positive.\n
+        │           │   │   │       └── )
+        │           │   │   └── ;
+        │           │   └── }
+        │           └── <else-stmt>
+        │               ├── else
+        │               └── <compound-stmt>
+        │                   ├── {
+        │                   ├── <stmt-list>
+        │                   │   ├── <expr-stmt>
+        │                   │   │   ├── <primary-expr>
+        │                   │   │   │   ├── putString
+        │                   │   │   │   └── <arg-list>
+        │                   │   │   │       ├── (
+        │                   │   │   │       ├── \n\n\tI \t Fibonacci(I) \n\t=====================\n
+        │                   │   │   │       └── )
+        │                   │   │   └── ;
+        │                   │   └── <stmt-list>
+        │                   │       ├── <expr-stmt>
+        │                   │       │   ├── <assign-expr>
+        │                   │       │   │   ├── next
+        │                   │       │   │   └── <assign-expr-t>
+        │                   │       │   │       ├── =
+        │                   │       │   │       ├── current
+        │                   │       │   │       └── <assign-expr-t>
+        │                   │       │   │           ├── =
+        │                   │       │   │           └── 1
+        │                   │       │   └── ;
+        │                   │       └── <for-stmt>
+        │                   │           ├── for
+        │                   │           ├── (
+        │                   │           ├── <assign-expr>
+        │                   │           │   ├── i
+        │                   │           │   └── <assign-expr-t>
+        │                   │           │       ├── =
+        │                   │           │       └── 1
+        │                   │           ├── ;
+        │                   │           ├── <relational-expr>
+        │                   │           │   ├── i
+        │                   │           │   └── <relational-expr-t>
+        │                   │           │       ├── <=
+        │                   │           │       └── n
+        │                   │           ├── ;
+        │                   │           ├── <assign-expr>
+        │                   │           │   ├── i
+        │                   │           │   └── <assign-expr-t>
+        │                   │           │       ├── =
+        │                   │           │       └── <additive-expr>
+        │                   │           │           ├── i
+        │                   │           │           └── <additive-expr-t>
+        │                   │           │               ├── +
+        │                   │           │               └── 1
+        │                   │           ├── )
+        │                   │           └── <compound-stmt>
+        │                   │               ├── {
+        │                   │               ├── <stmt-list>
+        │                   │               │   ├── <expr-stmt>
+        │                   │               │   │   ├── <primary-expr>
+        │                   │               │   │   │   ├── putString
+        │                   │               │   │   │   └── <arg-list>
+        │                   │               │   │   │       ├── (
+        │                   │               │   │   │       ├── \t
+        │                   │               │   │   │       └── )
+        │                   │               │   │   └── ;
+        │                   │               │   └── <stmt-list>
+        │                   │               │       ├── <expr-stmt>
+        │                   │               │       │   ├── <primary-expr>
+        │                   │               │       │   │   ├── putInt
+        │                   │               │       │   │   └── <arg-list>
+        │                   │               │       │   │       ├── (
+        │                   │               │       │   │       ├── i
+        │                   │               │       │   │       └── )
+        │                   │               │       │   └── ;
+        │                   │               │       └── <stmt-list>
+        │                   │               │           ├── <expr-stmt>
+        │                   │               │           │   ├── <primary-expr>
+        │                   │               │           │   │   ├── putString
+        │                   │               │           │   │   └── <arg-list>
+        │                   │               │           │   │       ├── (
+        │                   │               │           │   │       ├── \t
+        │                   │               │           │   │       └── )
+        │                   │               │           │   └── ;
+        │                   │               │           └── <stmt-list>
+        │                   │               │               ├── <expr-stmt>
+        │                   │               │               │   ├── <primary-expr>
+        │                   │               │               │   │   ├── putIntLn
+        │                   │               │               │   │   └── <arg-list>
+        │                   │               │               │   │       ├── (
+        │                   │               │               │   │       ├── current
+        │                   │               │               │   │       └── )
+        │                   │               │               │   └── ;
+        │                   │               │               └── <stmt-list>
+        │                   │               │                   ├── <expr-stmt>
+        │                   │               │                   │   ├── <assign-expr>
+        │                   │               │                   │   │   ├── twoaway
+        │                   │               │                   │   │   └── <assign-expr-t>
+        │                   │               │                   │   │       ├── =
+        │                   │               │                   │   │       └── <additive-expr>
+        │                   │               │                   │   │           ├── current
+        │                   │               │                   │   │           └── <additive-expr-t>
+        │                   │               │                   │   │               ├── +
+        │                   │               │                   │   │               └── next
+        │                   │               │                   │   └── ;
+        │                   │               │                   └── <stmt-list>
+        │                   │               │                       ├── <expr-stmt>
+        │                   │               │                       │   ├── <assign-expr>
+        │                   │               │                       │   │   ├── current
+        │                   │               │                       │   │   └── <assign-expr-t>
+        │                   │               │                       │   │       ├── =
+        │                   │               │                       │   │       └── next
+        │                   │               │                       │   └── ;
+        │                   │               │                       └── <expr-stmt>
+        │                   │               │                           ├── <assign-expr>
+        │                   │               │                           │   ├── next
+        │                   │               │                           │   └── <assign-expr-t>
+        │                   │               │                           │       ├── =
+        │                   │               │                           │       └── twoaway
+        │                   │               │                           └── ;
+        │                   │               └── }
+        │                   └── }
+        └── }

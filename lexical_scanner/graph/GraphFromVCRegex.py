@@ -1,8 +1,8 @@
-from vc_token import VCTokenSet
-from constructor.AutomataGraphContrustor import automata_graph_contructor
-from constructor.ThompsonConstruction import combine
-from constructor.NFAToDFA import nfa_to_dfa
-from constructor.DFAToMinimiseDFA import dfa_to_minimise_dfa
+from ..vc_token import VCTokenSet
+from ..constructor.AutomataGraphContrustor import automata_graph_contructor
+from ..constructor.ThompsonConstruction import combine
+from ..constructor.NFAToDFA import nfa_to_dfa
+from ..constructor.DFAToMinimiseDFA import dfa_to_minimise_dfa
 
 def build_automata_graph_from_vc_regex():
     graph = []
