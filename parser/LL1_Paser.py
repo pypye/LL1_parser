@@ -61,9 +61,9 @@ def parse(file, vc_token, parsing_table):
             ast = ast2
 
     os.makedirs(f"./output/{file}", exist_ok=True)
-    if os.path.exists(f"./output/{file}/out_ast_full.txt"):
-        os.remove(f"./output/{file}/out_ast_full.txt")
-    ast.tree.save2file(f"./output/{file}/out_ast_full.txt", key=lambda x: x.identifier)
+    if os.path.exists(f"./output/{file}/out_ast_full.vcps"):
+        os.remove(f"./output/{file}/out_ast_full.vcps")
+    ast.tree.save2file(f"./output/{file}/out_ast_full.vcps", key=lambda x: x.identifier)
 
     print("[+] Syntax is correct")
     return ast.tree

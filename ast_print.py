@@ -24,9 +24,9 @@ def remove_parent(tree, node):
 def pretty_print_ast(file, ast):
     ast2 = remove_eps(ast, ast.get_node(ast.root))
     ast3 = remove_parent(ast2, ast2.get_node(ast2.root))
-    if os.path.exists(f"./output/{file}/out_ast_reduced.txt"):
-        os.remove(f"./output/{file}/out_ast_reduced.txt")
-    ast3.save2file(f"./output/{file}/out_ast_reduced.txt", key=lambda x: x.identifier)
+    if os.path.exists(f"./output/{file}/out_ast_reduced.vcps"):
+        os.remove(f"./output/{file}/out_ast_reduced.vcps")
+    ast3.save2file(f"./output/{file}/out_ast_reduced.vcps", key=lambda x: x.identifier)
     return ast3
 
 
@@ -48,5 +48,5 @@ def bracket_print(file, ast):
     strs = gen_bracket(ast, ast.get_node(ast.root))
     strs = strs.replace("( )", "")
     strs = strs.replace("  ", " ")
-    out = open(f"./output/{file}/out_ast_bracket.txt", "w")
+    out = open(f"./output/{file}/out_ast_bracket.vcps", "w")
     out.write(strs)

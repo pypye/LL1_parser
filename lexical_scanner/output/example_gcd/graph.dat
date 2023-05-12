@@ -1,20 +1,20 @@
 ALPHABET
-logical
-exponent
-separator
+relational
+equality
 eof
 arithmetic_2
-assignment
-boolean
-space
-digit
-character
-other
-relational
+exponent
+logical
 dot
-equality
-arithmetic_1
+other
+separator
+character
+digit
+boolean
 keyword
+arithmetic_1
+assignment
+space
 double_quote
 
 STATE
@@ -59,241 +59,241 @@ INITIAL_STATE
 0
 
 ACCEPTING_STATES
-1 LOGICAL
-2 IDENTIFIER
-3 SEPARATOR
-4 EOF
-5 ARITHMETIC
-6 ASSIGNMENT
-7 BOOLEANLITERAL
-8 SPACE
+1 RELATIONAL
+2 EQUALITY
+3 EOF
+4 ARITHMETIC
+5 IDENTIFIER
+6 LOGICAL
+8 SEPARATOR
 9 INTLITERAL
-10 RELATIONAL
-12 EQUALITY
-13 KEYWORD
+10 BOOLEANLITERAL
+11 KEYWORD
+12 ASSIGNMENT
+13 SPACE
 27 STRINGLITERAL
-28 FLOATLITERAL
+29 FLOATLITERAL
 30 FLOATLITERAL
-33 FLOATLITERAL
+32 FLOATLITERAL
 34 FLOATLITERAL
 
 TRANSITIONS
-0 logical 1
-0 exponent 2
-0 separator 3
-0 eof 4
-0 arithmetic_2 5
-0 assignment 6
-0 boolean 7
-0 space 8
+0 relational 1
+0 equality 2
+0 eof 3
+0 arithmetic_2 4
+0 exponent 5
+0 logical 6
+0 dot 7
+0 separator 8
+0 character 5
 0 digit 9
-0 character 2
-0 relational 10
-0 dot 11
-0 equality 12
-0 arithmetic_1 5
-0 keyword 13
+0 boolean 10
+0 keyword 11
+0 arithmetic_1 4
+0 assignment 12
+0 space 13
 0 double_quote 14
-14 logical 14
-14 exponent 15
-14 separator 16
-14 arithmetic_2 17
-14 assignment 18
-14 space 19
-14 digit 20
-14 character 21
-14 other 22
-14 relational 23
-14 dot 24
-14 equality 25
-14 arithmetic_1 26
+14 relational 14
+14 equality 15
+14 arithmetic_2 16
+14 exponent 17
+14 logical 18
+14 dot 19
+14 other 20
+14 separator 21
+14 character 22
+14 digit 23
+14 arithmetic_1 24
+14 assignment 25
+14 space 26
 14 double_quote 27
-26 logical 14
-26 exponent 15
-26 separator 16
-26 arithmetic_2 17
-26 assignment 18
-26 space 19
-26 digit 20
-26 character 21
-26 other 22
-26 relational 23
-26 dot 24
-26 equality 25
-26 arithmetic_1 26
+26 relational 14
+26 equality 15
+26 arithmetic_2 16
+26 exponent 17
+26 logical 18
+26 dot 19
+26 other 20
+26 separator 21
+26 character 22
+26 digit 23
+26 arithmetic_1 24
+26 assignment 25
+26 space 26
 26 double_quote 27
-25 logical 14
-25 exponent 15
-25 separator 16
-25 arithmetic_2 17
-25 assignment 18
-25 space 19
-25 digit 20
-25 character 21
-25 other 22
-25 relational 23
-25 dot 24
-25 equality 25
-25 arithmetic_1 26
+25 relational 14
+25 equality 15
+25 arithmetic_2 16
+25 exponent 17
+25 logical 18
+25 dot 19
+25 other 20
+25 separator 21
+25 character 22
+25 digit 23
+25 arithmetic_1 24
+25 assignment 25
+25 space 26
 25 double_quote 27
-24 logical 14
-24 exponent 15
-24 separator 16
-24 arithmetic_2 17
-24 assignment 18
-24 space 19
-24 digit 20
-24 character 21
-24 other 22
-24 relational 23
-24 dot 24
-24 equality 25
-24 arithmetic_1 26
+24 relational 14
+24 equality 15
+24 arithmetic_2 16
+24 exponent 17
+24 logical 18
+24 dot 19
+24 other 20
+24 separator 21
+24 character 22
+24 digit 23
+24 arithmetic_1 24
+24 assignment 25
+24 space 26
 24 double_quote 27
-23 logical 14
-23 exponent 15
-23 separator 16
-23 arithmetic_2 17
-23 assignment 18
-23 space 19
-23 digit 20
-23 character 21
-23 other 22
-23 relational 23
-23 dot 24
-23 equality 25
-23 arithmetic_1 26
+23 relational 14
+23 equality 15
+23 arithmetic_2 16
+23 exponent 17
+23 logical 18
+23 dot 19
+23 other 20
+23 separator 21
+23 character 22
+23 digit 23
+23 arithmetic_1 24
+23 assignment 25
+23 space 26
 23 double_quote 27
-22 logical 14
-22 exponent 15
-22 separator 16
-22 arithmetic_2 17
-22 assignment 18
-22 space 19
-22 digit 20
-22 character 21
-22 other 22
-22 relational 23
-22 dot 24
-22 equality 25
-22 arithmetic_1 26
+22 relational 14
+22 equality 15
+22 arithmetic_2 16
+22 exponent 17
+22 logical 18
+22 dot 19
+22 other 20
+22 separator 21
+22 character 22
+22 digit 23
+22 arithmetic_1 24
+22 assignment 25
+22 space 26
 22 double_quote 27
-21 logical 14
-21 exponent 15
-21 separator 16
-21 arithmetic_2 17
-21 assignment 18
-21 space 19
-21 digit 20
-21 character 21
-21 other 22
-21 relational 23
-21 dot 24
-21 equality 25
-21 arithmetic_1 26
+21 relational 14
+21 equality 15
+21 arithmetic_2 16
+21 exponent 17
+21 logical 18
+21 dot 19
+21 other 20
+21 separator 21
+21 character 22
+21 digit 23
+21 arithmetic_1 24
+21 assignment 25
+21 space 26
 21 double_quote 27
-20 logical 14
-20 exponent 15
-20 separator 16
-20 arithmetic_2 17
-20 assignment 18
-20 space 19
-20 digit 20
-20 character 21
-20 other 22
-20 relational 23
-20 dot 24
-20 equality 25
-20 arithmetic_1 26
+20 relational 14
+20 equality 15
+20 arithmetic_2 16
+20 exponent 17
+20 logical 18
+20 dot 19
+20 other 20
+20 separator 21
+20 character 22
+20 digit 23
+20 arithmetic_1 24
+20 assignment 25
+20 space 26
 20 double_quote 27
-19 logical 14
-19 exponent 15
-19 separator 16
-19 arithmetic_2 17
-19 assignment 18
-19 space 19
-19 digit 20
-19 character 21
-19 other 22
-19 relational 23
-19 dot 24
-19 equality 25
-19 arithmetic_1 26
+19 relational 14
+19 equality 15
+19 arithmetic_2 16
+19 exponent 17
+19 logical 18
+19 dot 19
+19 other 20
+19 separator 21
+19 character 22
+19 digit 23
+19 arithmetic_1 24
+19 assignment 25
+19 space 26
 19 double_quote 27
-18 logical 14
-18 exponent 15
-18 separator 16
-18 arithmetic_2 17
-18 assignment 18
-18 space 19
-18 digit 20
-18 character 21
-18 other 22
-18 relational 23
-18 dot 24
-18 equality 25
-18 arithmetic_1 26
+18 relational 14
+18 equality 15
+18 arithmetic_2 16
+18 exponent 17
+18 logical 18
+18 dot 19
+18 other 20
+18 separator 21
+18 character 22
+18 digit 23
+18 arithmetic_1 24
+18 assignment 25
+18 space 26
 18 double_quote 27
-17 logical 14
-17 exponent 15
-17 separator 16
-17 arithmetic_2 17
-17 assignment 18
-17 space 19
-17 digit 20
-17 character 21
-17 other 22
-17 relational 23
-17 dot 24
-17 equality 25
-17 arithmetic_1 26
+17 relational 14
+17 equality 15
+17 arithmetic_2 16
+17 exponent 17
+17 logical 18
+17 dot 19
+17 other 20
+17 separator 21
+17 character 22
+17 digit 23
+17 arithmetic_1 24
+17 assignment 25
+17 space 26
 17 double_quote 27
-16 logical 14
-16 exponent 15
-16 separator 16
-16 arithmetic_2 17
-16 assignment 18
-16 space 19
-16 digit 20
-16 character 21
-16 other 22
-16 relational 23
-16 dot 24
-16 equality 25
-16 arithmetic_1 26
+16 relational 14
+16 equality 15
+16 arithmetic_2 16
+16 exponent 17
+16 logical 18
+16 dot 19
+16 other 20
+16 separator 21
+16 character 22
+16 digit 23
+16 arithmetic_1 24
+16 assignment 25
+16 space 26
 16 double_quote 27
-15 logical 14
-15 exponent 15
-15 separator 16
-15 arithmetic_2 17
-15 assignment 18
-15 space 19
-15 digit 20
-15 character 21
-15 other 22
-15 relational 23
-15 dot 24
-15 equality 25
-15 arithmetic_1 26
+15 relational 14
+15 equality 15
+15 arithmetic_2 16
+15 exponent 17
+15 logical 18
+15 dot 19
+15 other 20
+15 separator 21
+15 character 22
+15 digit 23
+15 arithmetic_1 24
+15 assignment 25
+15 space 26
 15 double_quote 27
-11 digit 28
-28 exponent 29
-28 digit 28
-29 digit 30
-29 arithmetic_1 31
-31 digit 30
-30 digit 30
-9 exponent 32
+13 space 13
+9 exponent 28
+9 dot 29
 9 digit 9
-9 dot 33
-33 exponent 32
-33 digit 28
-32 digit 34
-32 arithmetic_1 35
+29 exponent 28
+29 digit 30
+30 exponent 31
+30 digit 30
+31 digit 32
+31 arithmetic_1 33
+33 digit 32
+32 digit 32
+28 digit 34
+28 arithmetic_1 35
 35 digit 34
 34 digit 34
-8 space 8
-2 exponent 2
-2 digit 2
-2 character 2
+7 digit 30
+5 exponent 5
+5 character 5
+5 digit 5
 
