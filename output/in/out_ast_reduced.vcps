@@ -91,16 +91,45 @@
         │       │               │   │                   └── 5
         │       │               │   └── ;
         │       │               └── }
-        │       └── <if-stmt>
-        │           ├── if
-        │           ├── (
-        │           ├── <equality-expr>
-        │           │   ├── i
-        │           │   └── <equality-expr-t>
-        │           │       ├── ==
-        │           │       └── 2
-        │           ├── )
-        │           └── <compound-stmt>
-        │               ├── {
-        │               └── }
+        │       └── <stmt-list>
+        │           ├── <if-stmt>
+        │           │   ├── if
+        │           │   ├── (
+        │           │   ├── <equality-expr>
+        │           │   │   ├── i
+        │           │   │   └── <equality-expr-t>
+        │           │   │       ├── ==
+        │           │   │       └── 2
+        │           │   ├── )
+        │           │   └── <compound-stmt>
+        │           │       ├── {
+        │           │       └── }
+        │           └── <for-stmt>
+        │               ├── for
+        │               ├── (
+        │               ├── <assign-expr>
+        │               │   ├── i
+        │               │   └── <assign-expr-t>
+        │               │       ├── =
+        │               │       └── 1
+        │               ├── ;
+        │               ├── <relational-expr>
+        │               │   ├── i
+        │               │   └── <relational-expr-t>
+        │               │       ├── <
+        │               │       └── 1
+        │               ├── ;
+        │               ├── <assign-expr>
+        │               │   ├── i
+        │               │   └── <assign-expr-t>
+        │               │       ├── =
+        │               │       └── <additive-expr>
+        │               │           ├── i
+        │               │           └── <additive-expr-t>
+        │               │               ├── +
+        │               │               └── 1
+        │               ├── )
+        │               └── <compound-stmt>
+        │                   ├── {
+        │                   └── }
         └── }
